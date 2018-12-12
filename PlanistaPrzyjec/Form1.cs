@@ -17,9 +17,32 @@ namespace PlanistaPrzyjec
         {
             InitializeComponent();
             dinnerParty = new DinnerParty() { NumberOfPeople = 5 };
-            dinnerParty.SetHealthyOption(false);
-            dinnerParty.CalculateCostOfDecorations(true);
+            dinnerParty.CalculateCostOfDecorations(false);
+            dinnerParty.SetHealthyOption(true);            
             DisplayDinnerPartyCost(); 
+        }
+
+        private void DisplayDinnerPartCost()
+        {
+            decimal Cost = dinnerParty.CalculateCost(healthyBox.Checked);
+            costLabel.Text = Cost.ToString("c");
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            dinnerParty.NumberOfPeople = (int)numericUpDown1.Value;
+            DisplayDinnerPartCost();
+        }
+
+        private void fancyBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CalculateCostOfDecorations();
+            DisplayDinnerPartCost();
+        }
+
+        private void healthyBox_CheckedChanged(object sender, EventArgs e)
+        {
+            SetHealthyOption()
         }
     }
 }

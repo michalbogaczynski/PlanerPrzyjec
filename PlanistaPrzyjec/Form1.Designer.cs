@@ -30,9 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.fancyBox = new System.Windows.Forms.CheckBox();
+            this.healthyBox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.costLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,28 +57,31 @@
             0,
             0,
             0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // checkBox1
+            // fancyBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(51, 74);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(126, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Dekoracje fantazyjne";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.fancyBox.AutoSize = true;
+            this.fancyBox.Checked = true;
+            this.fancyBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.fancyBox.Location = new System.Drawing.Point(51, 74);
+            this.fancyBox.Name = "fancyBox";
+            this.fancyBox.Size = new System.Drawing.Size(126, 17);
+            this.fancyBox.TabIndex = 2;
+            this.fancyBox.Text = "Dekoracje fantazyjne";
+            this.fancyBox.UseVisualStyleBackColor = true;
+            this.fancyBox.CheckedChanged += new System.EventHandler(this.fancyBox_CheckedChanged);
             // 
-            // checkBox2
+            // healthyBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(51, 106);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(91, 17);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "Opcja zdrowa";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.healthyBox.AutoSize = true;
+            this.healthyBox.Location = new System.Drawing.Point(51, 106);
+            this.healthyBox.Name = "healthyBox";
+            this.healthyBox.Size = new System.Drawing.Size(91, 17);
+            this.healthyBox.TabIndex = 3;
+            this.healthyBox.Text = "Opcja zdrowa";
+            this.healthyBox.UseVisualStyleBackColor = true;
+            this.healthyBox.CheckedChanged += new System.EventHandler(this.healthyBox_CheckedChanged);
             // 
             // label2
             // 
@@ -89,14 +93,23 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Koszt";
             // 
+            // costLabel
+            // 
+            this.costLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.costLabel.Location = new System.Drawing.Point(95, 174);
+            this.costLabel.Name = "costLabel";
+            this.costLabel.Size = new System.Drawing.Size(100, 23);
+            this.costLabel.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.costLabel);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.healthyBox);
+            this.Controls.Add(this.fancyBox);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -111,9 +124,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox fancyBox;
+        private System.Windows.Forms.CheckBox healthyBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label costLabel;
     }
 }
 
